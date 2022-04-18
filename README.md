@@ -1,6 +1,6 @@
 # Build Go apps with Microsoft Graph - Completed project
 
-[![Go](https://github.com/microsoftgraph/msgraph-training-go/workflows/go/badge.svg)](https://github.com/microsoftgraph/msgraph-training-go/actions/workflows/go.yml)
+[![Go](https://github.com/microsoftgraph/msgraph-training-go/workflows/Go/badge.svg)](https://github.com/microsoftgraph/msgraph-training-go/actions/workflows/go.yml)
 
 This sample will introduce you to working with the Microsoft Graph SDK to access data in Microsoft 365 from .NET applications. This code is the result of completing the [Go Microsoft Graph tutorial](https://docs.microsoft.com/graph/tutorials/go).
 
