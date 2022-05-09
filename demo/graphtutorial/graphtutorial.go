@@ -95,7 +95,7 @@ func greetUser(graphHelper *graphhelper.GraphHelper) {
 		log.Panicf("Error getting user: %v\n", err)
 	}
 
-	fmt.Printf("Hello, %s!", *user.GetDisplayName())
+	fmt.Printf("Hello, %s!\n", *user.GetDisplayName())
 
 	// For Work/school accounts, email is in Mail property
 	// Personal accounts, email is in UserPrincipalName
