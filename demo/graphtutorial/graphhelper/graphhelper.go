@@ -182,6 +182,9 @@ func (g *GraphHelper) EnsureGraphForAppOnlyAuth() error {
 		authProvider, err := auth.NewAzureIdentityAuthenticationProviderWithScopes(g.clientSecretCredential, []string{
 			"https://graph.microsoft.com/.default",
 		})
+		if err != nil {
+			return err
+		}
 
 		// Create a request adapter using the auth provider
 		adapter, err := msgraphsdk.NewGraphRequestAdapter(authProvider)
