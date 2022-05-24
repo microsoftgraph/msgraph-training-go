@@ -154,7 +154,7 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 		toRecipient,
 	})
 
-	sendMailBody := sendmail.NewSendMailRequestBody()
+	sendMailBody := sendmail.NewSendMailPostRequestBody()
 	sendMailBody.SetMessage(message)
 
 	// Send the message
