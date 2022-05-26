@@ -100,9 +100,12 @@ func (g *GraphHelper) GetUser() (models.Userable, error) {
 		Select: []string{"displayName", "mail", "userPrincipalName"},
 	}
 
-	return g.userClient.Me().Get(&me.MeRequestBuilderGetOptions{
-		QueryParameters: &query,
-	})
+	return g.userClient.Me().
+		GetWithRequestConfigurationAndResponseHandler(
+			&me.MeRequestBuilderGetRequestConfiguration{
+				QueryParameters: &query,
+			},
+			nil)
 }
 
 // </GetUserSnippet>
@@ -119,9 +122,14 @@ func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 		Orderby: []string{"receivedDateTime DESC"},
 	}
 
-	return g.userClient.Me().MailFoldersById("inbox").Messages().Get(&messages.MessagesRequestBuilderGetOptions{
-		QueryParameters: &query,
-	})
+	return g.userClient.Me().
+		MailFoldersById("inbox").
+		Messages().
+		GetWithRequestConfigurationAndResponseHandler(
+			&messages.MessagesRequestBuilderGetRequestConfiguration{
+				QueryParameters: &query,
+			},
+			nil)
 }
 
 // </GetInboxSnippet>
@@ -146,14 +154,11 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 		toRecipient,
 	})
 
-	sendMailBody := sendmail.NewSendMailRequestBody()
+	sendMailBody := sendmail.NewSendMailPostRequestBody()
 	sendMailBody.SetMessage(message)
-	options := sendmail.SendMailRequestBuilderPostOptions{
-		Body: sendMailBody,
-	}
 
 	// Send the message
-	return g.userClient.Me().SendMail().Post(&options)
+	return g.userClient.Me().SendMail().Post(sendMailBody)
 }
 
 // </SendMailSnippet>
@@ -177,6 +182,9 @@ func (g *GraphHelper) EnsureGraphForAppOnlyAuth() error {
 		authProvider, err := auth.NewAzureIdentityAuthenticationProviderWithScopes(g.clientSecretCredential, []string{
 			"https://graph.microsoft.com/.default",
 		})
+		if err != nil {
+			return err
+		}
 
 		// Create a request adapter using the auth provider
 		adapter, err := msgraphsdk.NewGraphRequestAdapter(authProvider)
@@ -211,9 +219,12 @@ func (g *GraphHelper) GetUsers() (models.UserCollectionResponseable, error) {
 		Orderby: []string{"displayName"},
 	}
 
-	return g.appClient.Users().Get(&users.UsersRequestBuilderGetOptions{
-		QueryParameters: &query,
-	})
+	return g.appClient.Users().
+		GetWithRequestConfigurationAndResponseHandler(
+			&users.UsersRequestBuilderGetRequestConfiguration{
+				QueryParameters: &query,
+			},
+			nil)
 }
 
 // </GetUsersSnippet>

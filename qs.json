@@ -1,0 +1,7 @@
+{
+    "sourceDirectory": "./demo",
+    "exampleConfigFile": "./graphtutorial/.env",
+    "configFile": ".env",
+    "archiveFile": "GoQuickStart.zip",
+    "zipReadMe": "./README.md"
+}
