@@ -155,7 +155,7 @@ func listInbox(graphHelper *graphhelper.GraphHelper) {
 
 	// If GetOdatanextLink does not return nil,
 	// there are more messages available on the server
-	nextLink := messages.GetOdatanextLink()
+	nextLink := messages.GetNextLink()
 
 	fmt.Println()
 	fmt.Printf("More messages available? %t\n", nextLink != nil)
@@ -215,7 +215,7 @@ func listUsers(graphHelper *graphhelper.GraphHelper) {
 
 	// If GetOdatanextLink does not return nil,
 	// there are more users available on the server
-	nextLink := users.GetOdatanextLink()
+	nextLink := users.GetNextLink()
 
 	fmt.Println()
 	fmt.Printf("More users available? %t\n", nextLink != nil)
