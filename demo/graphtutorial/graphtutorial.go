@@ -153,9 +153,9 @@ func listInbox(graphHelper *graphhelper.GraphHelper) {
 		fmt.Printf("  Received: %s\n", (*message.GetReceivedDateTime()).In(location))
 	}
 
-	// If GetOdatanextLink does not return nil,
+	// If GetOdataNextLink does not return nil,
 	// there are more messages available on the server
-	nextLink := messages.GetNextLink()
+	nextLink := messages.GetOdataNextLink()
 
 	fmt.Println()
 	fmt.Printf("More messages available? %t\n", nextLink != nil)
@@ -213,9 +213,9 @@ func listUsers(graphHelper *graphhelper.GraphHelper) {
 		fmt.Printf("  Email: %s\n", *email)
 	}
 
-	// If GetOdatanextLink does not return nil,
+	// If GetOdataNextLink does not return nil,
 	// there are more users available on the server
-	nextLink := users.GetNextLink()
+	nextLink := users.GetOdataNextLink()
 
 	fmt.Println()
 	fmt.Printf("More users available? %t\n", nextLink != nil)
