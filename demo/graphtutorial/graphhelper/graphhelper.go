@@ -100,12 +100,10 @@ func (g *GraphHelper) GetUser() (models.Userable, error) {
 		Select: []string{"displayName", "mail", "userPrincipalName"},
 	}
 
-	return g.userClient.Me().
-		GetWithRequestConfigurationAndResponseHandler(
-			&me.MeRequestBuilderGetRequestConfiguration{
-				QueryParameters: &query,
-			},
-			nil)
+	return g.userClient.Me().Get(context.Background(),
+		&me.MeRequestBuilderGetRequestConfiguration{
+			QueryParameters: &query,
+		})
 }
 
 // </GetUserSnippet>
@@ -125,11 +123,10 @@ func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 	return g.userClient.Me().
 		MailFoldersById("inbox").
 		Messages().
-		GetWithRequestConfigurationAndResponseHandler(
+		Get(context.Background(),
 			&messages.MessagesRequestBuilderGetRequestConfiguration{
 				QueryParameters: &query,
-			},
-			nil)
+			})
 }
 
 // </GetInboxSnippet>
@@ -158,7 +155,7 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 	sendMailBody.SetMessage(message)
 
 	// Send the message
-	return g.userClient.Me().SendMail().Post(sendMailBody)
+	return g.userClient.Me().SendMail().Post(context.Background(), sendMailBody, nil)
 }
 
 // </SendMailSnippet>
@@ -220,11 +217,10 @@ func (g *GraphHelper) GetUsers() (models.UserCollectionResponseable, error) {
 	}
 
 	return g.appClient.Users().
-		GetWithRequestConfigurationAndResponseHandler(
+		Get(context.Background(),
 			&users.UsersRequestBuilderGetRequestConfiguration{
 				QueryParameters: &query,
-			},
-			nil)
+			})
 }
 
 // </GetUsersSnippet>
