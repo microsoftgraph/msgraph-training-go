@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.1.0
 	github.com/joho/godotenv v1.4.0
 	github.com/microsoft/kiota-authentication-azure-go v0.4.1
-	github.com/microsoftgraph/msgraph-sdk-go v0.38.1
+	github.com/microsoftgraph/msgraph-sdk-go v0.39.0
 )
 
 require (
@@ -18,7 +18,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/kylelemons/godebug v1.1.0 // indirect
-	github.com/microsoft/kiota-abstractions-go v0.10.0 // indirect
+	github.com/microsoft/kiota-abstractions-go v0.10.1 // indirect
 	github.com/microsoft/kiota-http-go v0.7.2 // indirect
 	github.com/microsoft/kiota-serialization-json-go v0.6.0 // indirect
 	github.com/microsoft/kiota-serialization-text-go v0.5.0 // indirect
