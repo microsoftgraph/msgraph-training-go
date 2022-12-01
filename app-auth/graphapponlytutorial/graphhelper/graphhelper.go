@@ -28,7 +28,7 @@ func NewGraphHelper() *GraphHelper {
 
 // </GraphHelperSnippet>
 
-// <UserAuthConfigSnippet>
+// <AppAuthConfigSnippet>
 func (g *GraphHelper) InitializeGraphForAppAuth() error {
 	clientId := os.Getenv("CLIENT_ID")
 	tenantId := os.Getenv("TENANT_ID")
@@ -61,9 +61,9 @@ func (g *GraphHelper) InitializeGraphForAppAuth() error {
 	return nil
 }
 
-// </UserAuthConfigSnippet>
+// </AppAuthConfigSnippet>
 
-// <GetUserTokenSnippet>
+// <GetAppTokenSnippet>
 func (g *GraphHelper) GetAppToken() (*string, error) {
 	token, err := g.clientSecretCredential.GetToken(context.Background(), policy.TokenRequestOptions{
 		Scopes: []string{
@@ -77,7 +77,7 @@ func (g *GraphHelper) GetAppToken() (*string, error) {
 	return &token.Token, nil
 }
 
-// </GetUserTokenSnippet>
+// </GetAppTokenSnippet>
 
 // <GetUsersSnippet>
 func (g *GraphHelper) GetUsers() (models.UserCollectionResponseable, error) {

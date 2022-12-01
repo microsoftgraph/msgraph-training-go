@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Go Graph App-only Tutorial")
+	fmt.Println("Go Graph App-Only Tutorial")
 	fmt.Println()
 
 	// Load .env files
