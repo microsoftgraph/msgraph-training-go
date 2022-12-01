@@ -39,8 +39,7 @@ func main() {
 		fmt.Println("1. Display access token")
 		fmt.Println("2. List my inbox")
 		fmt.Println("3. Send mail")
-		fmt.Println("4. List users (requires app-only)")
-		fmt.Println("5. Make a Graph call")
+		fmt.Println("4. Make a Graph call")
 
 		_, err = fmt.Scanf("%d", &choice)
 		if err != nil {
@@ -61,9 +60,6 @@ func main() {
 			// Send an email message
 			sendMail(graphHelper)
 		case 4:
-			// List users
-			listUsers(graphHelper)
-		case 5:
 			// Run any Graph code
 			makeGraphCall(graphHelper)
 		default:
@@ -192,37 +188,6 @@ func sendMail(graphHelper *graphhelper.GraphHelper) {
 }
 
 // </SendMailSnippet>
-
-// <ListUsersSnippet>
-func listUsers(graphHelper *graphhelper.GraphHelper) {
-	users, err := graphHelper.GetUsers()
-	if err != nil {
-		log.Panicf("Error getting users: %v", err)
-	}
-
-	// Output each user's details
-	for _, user := range users.GetValue() {
-		fmt.Printf("User: %s\n", *user.GetDisplayName())
-		fmt.Printf("  ID: %s\n", *user.GetId())
-
-		noEmail := "NO EMAIL"
-		email := user.GetMail()
-		if email == nil {
-			email = &noEmail
-		}
-		fmt.Printf("  Email: %s\n", *email)
-	}
-
-	// If GetOdataNextLink does not return nil,
-	// there are more users available on the server
-	nextLink := users.GetOdataNextLink()
-
-	fmt.Println()
-	fmt.Printf("More users available? %t\n", nextLink != nil)
-	fmt.Println()
-}
-
-// </ListUsersSnippet>
 
 // <MakeGraphCallSnippet>
 func makeGraphCall(graphHelper *graphhelper.GraphHelper) {
