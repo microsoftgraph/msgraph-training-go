@@ -71,7 +71,7 @@ Open [.env](./graphTutorial/.env) and update the values according to the followi
 | `CLIENT_ID` | The client ID of your app registration |
 | `TENANT_ID` | If you chose the option to only allow users in your organization to sign in, change this value to your tenant ID. Otherwise leave as `common`. |
 
-## Build and run the sample
+## Run the sample
 
 In your command-line interface (CLI), navigate to the project directory and run the following command.
 
