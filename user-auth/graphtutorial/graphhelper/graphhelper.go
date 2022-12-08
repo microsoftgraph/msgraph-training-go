@@ -15,8 +15,6 @@ import (
 	auth "github.com/microsoft/kiota-authentication-azure-go"
 	msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
 	"github.com/microsoftgraph/msgraph-sdk-go/me"
-	"github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/messages"
-	"github.com/microsoftgraph/msgraph-sdk-go/me/sendmail"
 	"github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
@@ -108,7 +106,7 @@ func (g *GraphHelper) GetUser() (models.Userable, error) {
 // <GetInboxSnippet>
 func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 	var topValue int32 = 25
-	query := messages.MessagesRequestBuilderGetQueryParameters{
+	query := me.MeMailFoldersItemMessagesRequestBuilderGetQueryParameters{
 		// Only request specific properties
 		Select: []string{"from", "isRead", "receivedDateTime", "subject"},
 		// Get at most 25 results
@@ -121,7 +119,7 @@ func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 		MailFoldersById("inbox").
 		Messages().
 		Get(context.Background(),
-			&messages.MessagesRequestBuilderGetRequestConfiguration{
+			&me.MeMailFoldersItemMessagesRequestBuilderGetRequestConfiguration{
 				QueryParameters: &query,
 			})
 }
@@ -148,7 +146,7 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 		toRecipient,
 	})
 
-	sendMailBody := sendmail.NewSendMailPostRequestBody()
+	sendMailBody := models.NewMeSendMailPostRequestBody()
 	sendMailBody.SetMessage(message)
 
 	// Send the message
