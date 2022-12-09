@@ -1,0 +1,6 @@
+go 1.19
+
+use (
+	./app-auth/graphapponlytutorial
+	./user-auth/graphtutorial
+)

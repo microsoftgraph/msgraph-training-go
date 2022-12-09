@@ -9,10 +9,9 @@ on:
 jobs:
 
   build:
-    defaults:
-      run:
-        working-directory: demo/graphtutorial
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
 
@@ -21,8 +20,18 @@ jobs:
       with:
         go-version: 1.19
 
-    - name: Build
+    - name: Build user app
+      working-directory: "user-auth/graphtutorial/"
       run: go build -v ./...
 
-    - name: Test
+    - name: Test user app
+      working-directory: "user-auth/graphtutorial/"
+      run: go test -v ./...
+
+    - name: Build app-only app
+      working-directory: "app-auth/graphapponlytutorial/"
+      run: go build -v ./...
+
+    - name: Test app-only app
+      working-directory: "app-auth/graphapponlytutorial/"
       run: go test -v ./...
