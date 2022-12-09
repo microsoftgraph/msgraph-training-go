@@ -5,11 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Package",
+            "name": "User auth",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/demo/graphtutorial/graphtutorial.go",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "App auth",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/app-auth/graphapponlytutorial/graphapponlytutorial.go",
             "console": "integratedTerminal"
         }
     ]
