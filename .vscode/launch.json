@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/demo/graphtutorial/graphtutorial.go",
+            "program": "${workspaceFolder}/user-auth/graphtutorial/graphtutorial.go",
             "console": "integratedTerminal"
         },
         {
