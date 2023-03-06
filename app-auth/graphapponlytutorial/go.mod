@@ -3,17 +3,17 @@ module graphapponlytutorial
 go 1.19
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.3.1
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.4.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.2.1
 	github.com/joho/godotenv v1.5.1
 	github.com/microsoft/kiota-authentication-azure-go v0.6.0
-	github.com/microsoftgraph/msgraph-sdk-go v0.55.0
+	github.com/microsoftgraph/msgraph-sdk-go v0.56.0
 )
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/internal v1.1.2 // indirect
+	github.com/Azure/azure-sdk-for-go/sdk/internal v1.2.0 // indirect
 	github.com/AzureAD/microsoft-authentication-library-for-go v0.8.1 // indirect
-	github.com/cjlapao/common-go v0.0.37 // indirect
+	github.com/cjlapao/common-go v0.0.38 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
