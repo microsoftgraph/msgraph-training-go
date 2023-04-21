@@ -14,8 +14,8 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	auth "github.com/microsoft/kiota-authentication-azure-go"
 	msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
-	"github.com/microsoftgraph/msgraph-sdk-go/me"
 	"github.com/microsoftgraph/msgraph-sdk-go/models"
+	"github.com/microsoftgraph/msgraph-sdk-go/users"
 )
 
 type GraphHelper struct {
@@ -90,13 +90,13 @@ func (g *GraphHelper) GetUserToken() (*string, error) {
 
 // <GetUserSnippet>
 func (g *GraphHelper) GetUser() (models.Userable, error) {
-	query := me.MeRequestBuilderGetQueryParameters{
+	query := users.UserItemRequestBuilderGetQueryParameters{
 		// Only request specific properties
 		Select: []string{"displayName", "mail", "userPrincipalName"},
 	}
 
 	return g.userClient.Me().Get(context.Background(),
-		&me.MeRequestBuilderGetRequestConfiguration{
+		&users.UserItemRequestBuilderGetRequestConfiguration{
 			QueryParameters: &query,
 		})
 }
@@ -106,7 +106,7 @@ func (g *GraphHelper) GetUser() (models.Userable, error) {
 // <GetInboxSnippet>
 func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 	var topValue int32 = 25
-	query := me.MailFoldersItemMessagesRequestBuilderGetQueryParameters{
+	query := users.ItemMailFoldersItemMessagesRequestBuilderGetQueryParameters{
 		// Only request specific properties
 		Select: []string{"from", "isRead", "receivedDateTime", "subject"},
 		// Get at most 25 results
@@ -115,11 +115,11 @@ func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 		Orderby: []string{"receivedDateTime DESC"},
 	}
 
-	return g.userClient.Me().
-		MailFoldersById("inbox").
+	return g.userClient.Me().MailFolders().
+		ByMailFolderId("inbox").
 		Messages().
 		Get(context.Background(),
-			&me.MailFoldersItemMessagesRequestBuilderGetRequestConfiguration{
+			&users.ItemMailFoldersItemMessagesRequestBuilderGetRequestConfiguration{
 				QueryParameters: &query,
 			})
 }
@@ -146,11 +146,11 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 		toRecipient,
 	})
 
-	sendMailBody := me.NewMicrosoftGraphSendMailSendMailPostRequestBody()
+	sendMailBody := users.NewItemSendMailPostRequestBody()
 	sendMailBody.SetMessage(message)
 
 	// Send the message
-	return g.userClient.Me().MicrosoftGraphSendMail().Post(context.Background(), sendMailBody, nil)
+	return g.userClient.Me().SendMail().Post(context.Background(), sendMailBody, nil)
 }
 
 // </SendMailSnippet>
