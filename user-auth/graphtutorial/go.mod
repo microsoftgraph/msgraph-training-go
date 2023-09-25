@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.3.1
 	github.com/joho/godotenv v1.5.1
 	github.com/microsoft/kiota-authentication-azure-go v1.0.0
-	github.com/microsoftgraph/msgraph-sdk-go v1.18.0
+	github.com/microsoftgraph/msgraph-sdk-go v1.19.0
 )
 
 require (
