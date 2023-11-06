@@ -19,8 +19,8 @@ github.com/go-logr/stdr v1.2.2/go.mod h1:mMo/vtBO5dYbehREoey6XUKy/eSumjCCveDpRre
 github.com/golang-jwt/jwt/v5 v5.0.0 h1:1n1XNM9hk7O9mnQoNBGolZvzebBQ7p93ULHRc28XJUE=
 github.com/golang-jwt/jwt/v5 v5.0.0/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVIyoH402zdk=
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
-github.com/google/uuid v1.3.1 h1:KjJaJ9iWZ3jOFZIf1Lqf4laDRCasjl0BCmnEGxkdLb4=
-github.com/google/uuid v1.3.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/google/uuid v1.4.0 h1:MtMxsa51/r9yyhkyLsVeVt0B+BGQZzpQiTQ4eHZ8bc4=
+github.com/google/uuid v1.4.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
@@ -41,8 +41,8 @@ github.com/microsoft/kiota-serialization-multipart-go v1.0.0 h1:3O5sb5Zj+moLBiJy
 github.com/microsoft/kiota-serialization-multipart-go v1.0.0/go.mod h1:yauLeBTpANk4L03XD985akNysG24SnRJGaveZf+p4so=
 github.com/microsoft/kiota-serialization-text-go v1.0.0 h1:XOaRhAXy+g8ZVpcq7x7a0jlETWnWrEum0RhmbYrTFnA=
 github.com/microsoft/kiota-serialization-text-go v1.0.0/go.mod h1:sM1/C6ecnQ7IquQOGUrUldaO5wj+9+v7G2W3sQ3fy6M=
-github.com/microsoftgraph/msgraph-sdk-go v1.23.0 h1:0dFfUh6X5GdtICt+cOfXc8EnsZyHYA504Vl1Om/ZFSw=
-github.com/microsoftgraph/msgraph-sdk-go v1.23.0/go.mod h1:wNm5PDM3ShAnvkhDBptRR4K9e/Rd6LBG1QbOHQAYscM=
+github.com/microsoftgraph/msgraph-sdk-go v1.24.0 h1:MAmx2tg93+gcw24ze/qckTJ5+0Veex441FrdQ2nbhLM=
+github.com/microsoftgraph/msgraph-sdk-go v1.24.0/go.mod h1:TXZEo+yGt218PdorhALG145rJhKR22O08lU9RyJAx+Y=
 github.com/microsoftgraph/msgraph-sdk-go-core v1.0.0 h1:7NWTfyXvOjoizW7PmxNp3+8wCKPgpODs/D1cUZ3fkAY=
 github.com/microsoftgraph/msgraph-sdk-go-core v1.0.0/go.mod h1:tQb4q3YMIj2dWhhXhQSJ4ELpol931ANKzHSYK5kX1qE=
 github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8 h1:KoWmjvw+nsYOo29YJK9vDA65RGE3NrOnUtO7a+RF9HU=
