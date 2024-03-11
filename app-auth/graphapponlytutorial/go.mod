@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.5.1
 	github.com/joho/godotenv v1.5.1
 	github.com/microsoft/kiota-authentication-azure-go v1.0.2
-	github.com/microsoftgraph/msgraph-sdk-go v1.35.0
+	github.com/microsoftgraph/msgraph-sdk-go v1.36.0
 )
 
 require (
@@ -30,7 +30,7 @@ require (
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/std-uritemplate/std-uritemplate/go v0.0.50 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
+	github.com/stretchr/testify v1.9.0 // indirect
 	go.opentelemetry.io/otel v1.23.1 // indirect
 	go.opentelemetry.io/otel/metric v1.23.1 // indirect
 	go.opentelemetry.io/otel/trace v1.23.1 // indirect
