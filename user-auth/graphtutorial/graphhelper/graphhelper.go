@@ -106,7 +106,7 @@ func (g *GraphHelper) GetUser() (models.Userable, error) {
 // <GetInboxSnippet>
 func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 	var topValue int32 = 25
-	query := users.ItemMailFoldersItemMessagesRequestBuilderGetQueryParameters{
+	query := users.ItemMailfoldersItemMessagesRequestBuilderGetQueryParameters{
 		// Only request specific properties
 		Select: []string{"from", "isRead", "receivedDateTime", "subject"},
 		// Get at most 25 results
@@ -119,7 +119,7 @@ func (g *GraphHelper) GetInbox() (models.MessageCollectionResponseable, error) {
 		ByMailFolderId("inbox").
 		Messages().
 		Get(context.Background(),
-			&users.ItemMailFoldersItemMessagesRequestBuilderGetRequestConfiguration{
+			&users.ItemMailfoldersItemMessagesRequestBuilderGetRequestConfiguration{
 				QueryParameters: &query,
 			})
 }
@@ -146,7 +146,7 @@ func (g *GraphHelper) SendMail(subject *string, body *string, recipient *string)
 		toRecipient,
 	})
 
-	sendMailBody := users.NewItemSendMailPostRequestBody()
+	sendMailBody := users.NewItemSendmailSendMailPostRequestBody()
 	sendMailBody.SetMessage(message)
 
 	// Send the message
