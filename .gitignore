@@ -18,3 +18,5 @@
 *.zip
 
 go.work*
+user-auth/graphtutorial/graphtutorial
+app-auth/graphapponlytutorial/graphapponlytutorial
