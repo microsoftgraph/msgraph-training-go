@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.17.0
-	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.0
+	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.1
 	github.com/joho/godotenv v1.5.1
 	github.com/microsoft/kiota-authentication-azure-go v1.1.0
 	github.com/microsoftgraph/msgraph-sdk-go v1.58.0
@@ -12,7 +12,7 @@ require (
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.10.0 // indirect
-	github.com/AzureAD/microsoft-authentication-library-for-go v1.2.2 // indirect
+	github.com/AzureAD/microsoft-authentication-library-for-go v1.3.2 // indirect
 	github.com/cjlapao/common-go v0.0.39 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
